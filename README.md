@@ -40,6 +40,8 @@ a type breaks, a test fails, or a cited government document has disappeared.
 
 ## Status
 
+**Live App:** [https://thonmai-engine.onrender.com](https://thonmai-engine.onrender.com) (Deployed via Render)
+
 | Area | State |
 | --- | --- |
 | Eligibility engine | Complete, 228 tests passing |
@@ -47,10 +49,11 @@ a type breaks, a test fails, or a cited government document has disappeared.
 | Quota model | TN 69% roster, horizontal and special quotas, central contrast |
 | Document registry | 17 document types with issuing authority and validity rules |
 | Web UI | `/`, `/login`, `/register`, `/check`, `/results`, `/account`, `/documents`, `/quota`, `/schemes`, 50 scheme pages |
+| Offline PWA | Fully configured with `@serwist/next`. Installable on mobile devices for offline use |
 | API | `/api/match`, `/api/schemes`, `/api/verify-sources`, `/api/auth/*`, `/api/profiles`, `/api/ocr/extract` |
 | Source verification | 41 unique documents probed live, 0 missing, 12 needing a manual look |
 | Accounts / database | `node:sqlite`, email + password, saved profiles |
-| Document reading | Gemini for photos and scanned PDFs; `pdftotext` for PDFs that already contain text |
+| Document reading | Gemini and OCR.Space for photos and scanned PDFs; `pdftotext` for PDFs |
 
 ---
 
