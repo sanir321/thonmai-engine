@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/*
+ * Thonmai design tokens.
+ * Palette leans on Tamil Nadu warmth ( turmeric, clay, palm green ) against a
+ * near-black ink, so long text blocks stay readable in a low-light mobile
+ * setting.
+ */
+@theme {
+  --color-ink: #14100c;
+  --color-ink-soft: #4a423a;
+  --color-paper: #fdfaf5;
+  --color-paper-raised: #ffffff;
+
+  --color-clay-50: #fdf4ee;
+  --color-clay-100: #f9e3d5;
+  --color-clay-200: #f0c3a6;
+  --color-clay-400: #d97f45;
+  --color-clay-500: #c2611f;
+  --color-clay-600: #a34d15;
+  --color-clay-700: #7d3a10;
+
+  --color-palm-50: #eef7f1;
+  --color-palm-100: #d6ecdd;
+  --color-palm-500: #1f7a4d;
+  --color-palm-600: #175c3a;
+  --color-palm-700: #0f4229;
+
+  --color-marigold-100: #fdf0cf;
+  --color-marigold-500: #c98a06;
+  --color-marigold-700: #8a5c02;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-tamil: var(--font-noto-sans-tamil), var(--font-inter), sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tamil text needs a touch more line height; the script has taller ascenders. */
+.ta {
+  font-family: var(--font-tamil);
+  line-height: 1.7;
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-paper-raised);
+    border: 1px solid var(--color-clay-100);
+    border-radius: 0.875rem;
+    box-shadow: 0 1px 2px rgb(20 16 12 / 0.04);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem 1.125rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: background-color 120ms ease, border-color 120ms ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-clay-500);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-clay-600);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-paper-raised);
+    color: var(--color-ink);
+    border: 1px solid var(--color-clay-200);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-clay-50);
+  }
+
+  .field {
+    width: 100%;
+    border: 1px solid var(--color-clay-200);
+    border-radius: 0.5rem;
+    background-color: var(--color-paper-raised);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9375rem;
+  }
+
+  .field:focus {
+    outline: 2px solid var(--color-clay-400);
+    outline-offset: 1px;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    margin-bottom: 0.3125rem;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 999px;
+    padding: 0.1875rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+/* Visible focus for keyboard users on every interactive element. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-clay-500);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

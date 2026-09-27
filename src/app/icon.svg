@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Thonmai">
+  <rect width="64" height="64" rx="14" fill="#a34d15" />
+  <path
+    d="M20 16h24M32 16v32M22 48h20"
+    stroke="#fdf6ef"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>
