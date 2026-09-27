@@ -11,7 +11,6 @@ const nextConfig = {
   experimental: {
     serverActions: { bodySizeLimit: "8mb" },
   },
-  output: "standalone",
 };
 
 export default withSerwist(nextConfig);
